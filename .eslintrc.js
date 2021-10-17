@@ -1,27 +1,11 @@
 module.exports = {
     root: true,
-    parser: '@typescript-eslint/parser',
-    plugins: ['react', '@typescript-eslint'],
     extends: [
-        'airbnb-typescript',
-        'airbnb/hooks',
-        'eslint:recommended',
-        'plugin:react/recommended',
-        'plugin:@typescript-eslint/recommended'
+        require.resolve('./eslint-base.js')
     ],
-    env: {
-        browser: true,
-        jasmine: true,
-        jest: true,
-        node: true,
-    },
-    parserOptions: {
-        project: './tsconfig.json',
-    },
+
     rules: {
-        'react/prop-types': 'off',
-        '@typescript-eslint/no-unused-vars': ['error'],
-        '@typescript-eslint/explicit-module-boundary-types': 'off'
+        "react/react-in-jsx-scope": "off",
     },
     overrides: [
         {
