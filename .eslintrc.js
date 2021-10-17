@@ -12,6 +12,7 @@ module.exports = {
             files: '**/cypress/**/*.ts',
             rules: {
                 'global-require': 'off',
+                '@typescript-eslint/no-namespace': 'off',
                 '@typescript-eslint/no-var-requires': 'off',
             }
         }

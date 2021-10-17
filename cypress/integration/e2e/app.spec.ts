@@ -3,7 +3,8 @@ describe('App', () => {
     cy.visit('/');
   });
 
-  it('should display link', () => {
-    cy.get('.App-link').should('contain.text', 'Learn React');
-  });
+  // it('should open delete confirmation dialog', () => {
+  //   cy.byHook('task-card-1').get('button').click();
+  //   cy.byHook('app-dialog').should('be.visible');
+  // });
 });
