@@ -6,9 +6,6 @@
       "dom.iterable",
       "esnext"
     ],
-    "types": [
-      "cypress"
-    ],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -26,5 +23,8 @@
   "include": [
     "src",
     "cypress"
+  ],
+  "files": [
+    "./cypress/support/index.d.ts"
   ]
 }

@@ -23,3 +23,6 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add('hook', (dataHook: string) => {
+  return cy.get(`[data-hook=${dataHook}]`);
+});
