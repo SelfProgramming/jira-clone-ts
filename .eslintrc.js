@@ -21,13 +21,14 @@ module.exports = {
     rules: {
         'react/prop-types': 'off',
         '@typescript-eslint/no-unused-vars': ['error'],
+        '@typescript-eslint/explicit-module-boundary-types': 'off'
     },
     overrides: [
         {
-            files: "**/cypress/**/*.ts",
+            files: '**/cypress/**/*.ts',
             rules: {
-                "global-require": "off",
-                "@typescript-eslint/no-var-requires": "off"
+                'global-require': 'off',
+                '@typescript-eslint/no-var-requires': 'off',
             }
         }
     ]
