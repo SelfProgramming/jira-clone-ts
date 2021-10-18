@@ -12,7 +12,10 @@ export const useNavigationTabs = () => {
     const activeTabIndex = tabs.findIndex(
       (tab) => tab.path === location.pathname,
     );
-    setActiveTab(activeTabIndex);
+
+    if (activeTabIndex) {
+      setActiveTab(activeTabIndex);
+    }
   }, [location.pathname]);
 
   return [activeTab, tabs] as const;
