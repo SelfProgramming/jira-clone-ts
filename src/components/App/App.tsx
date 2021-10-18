@@ -1,30 +1,25 @@
 import React from 'react';
+import { Grid } from '@mui/material';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import './App.scss';
-import {
-  AppDialogProvider,
-  useDialogState,
-} from '../AppDialog/AppDialog.context';
-import { AppDialog } from '../AppDialog/AppDialog';
-import { Container, Grid } from '@mui/material';
-import { TaskCard } from '../TaskCard/TaskCard';
-import { nanoid } from 'nanoid';
-
-const task = {
-  id: nanoid(),
-  name: 'Task 1',
-  dataHook: 'task-card-1',
-  onDelete() {
-    console.log('Delete');
-  },
-};
+import { AppHeader } from '../AppHeader/AppHeader';
+import { YourWorkPage } from '../../pages/YourWorkPage/YourWorkPage';
 
 export const App = () => (
-  <AppDialogProvider>
-    <Container>
-      <Grid item xs={2}>
-        <TaskCard {...task} />
-      </Grid>
-    </Container>
-    <AppDialog />
-  </AppDialogProvider>
+  <Grid container>
+    <Grid item xs={12}>
+      <AppHeader />
+    </Grid>
+
+    <Grid item container>
+      <Switch>
+        <Route exact path="/">
+          <Redirect to="/jira/your-work" />
+        </Route>
+        <Route exact path="/jira/your-work">
+          <YourWorkPage />
+        </Route>
+      </Switch>
+    </Grid>
+  </Grid>
 );
